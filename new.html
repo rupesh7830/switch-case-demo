@@ -1,26 +1,57 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Fruit Switch Case</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+      background-color: #f2f2f2;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    p {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
+  <h1>Fruit Checker</h1>
+  <input type="text" id="fruitInput" placeholder="Enter fruit name">
+  <button onclick="checkFruit()">Check Fruit</button>
+  <p id="result"></p>
+
   <script>
-    let fruits = prompt('Enter fruits name =');
-    switch (fruits) {
-      case "banana":
-        document.write('I don\'t like banana');
-        break;
-      case "mango":
-        document.write('Mango is good fruit');
-        break;
-      case "apple":
-        document.write('Apple is poor fruit');
-        break;
-      default:
-        document.write('Please enter a valid fruit name');
+    function checkFruit() {
+      const fruits = document.getElementById("fruitInput").value.toLowerCase();
+      let message = '';
+
+      switch(fruits) {
+        case "banana":
+          message = "I don't like banana";
+          break;
+        case "mango":
+          message = "Mango is a good fruit";
+          break;
+        case "apple":
+          message = "Apple is a poor fruit";
+          break;
+        default:
+          message = "Please enter a valid fruit name";
+      }
+
+      document.getElementById("result").innerText = message;
     }
   </script>
 </body>
 </html>
+
+
